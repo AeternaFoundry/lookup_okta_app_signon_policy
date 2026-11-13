@@ -1,13 +1,13 @@
 output "app_signon_policy_lookup_id" {
-  description = "Map of id values across all app_signon_policy_lookup, keyed the same as var.app_signon_policy_lookup except keys with no id are omitted"
-  value       = { for k, v in data.okta_app_signon_policy.app_signon_policy_lookup : k => v.id if v.id != null && length(v.id) > 0 }
+  description = "Map of id values across all app_signon_policy_lookup, keyed the same as var.app_signon_policy_lookup"
+  value       = { for k, v in data.okta_app_signon_policy.app_signon_policy_lookup : k => v.id }
 }
 output "app_signon_policy_lookup_app_id" {
-  description = "Map of app_id values across all app_signon_policy_lookup, keyed the same as var.app_signon_policy_lookup except keys with no app_id are omitted"
-  value       = { for k, v in data.okta_app_signon_policy.app_signon_policy_lookup : k => v.app_id if v.app_id != null && length(v.app_id) > 0 }
+  description = "Map of app_id values across all app_signon_policy_lookup, keyed the same as var.app_signon_policy_lookup"
+  value       = { for k, v in data.okta_app_signon_policy.app_signon_policy_lookup : k => v.app_id }
 }
 output "app_signon_policy_lookup_name" {
-  description = "Map of name values across all app_signon_policy_lookup, keyed the same as var.app_signon_policy_lookup except keys with no name are omitted"
-  value       = { for k, v in data.okta_app_signon_policy.app_signon_policy_lookup : k => v.name if v.name != null && length(v.name) > 0 }
+  description = "Map of name values across all app_signon_policy_lookup, keyed the same as var.app_signon_policy_lookup"
+  value       = { for k, v in data.okta_app_signon_policy.app_signon_policy_lookup : k => v.name }
 }
 
